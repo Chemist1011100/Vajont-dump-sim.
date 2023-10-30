@@ -36,8 +36,8 @@ def update_game():
                    f"Сбросьте уровень ниже этого значения что-бы остановить оползень\n" \
                    f"Если оползень упадёт в воду, то спровоцирует мини-цунами"
 
-        landslide_speed = min(water_level - critical_water_level, max_speed)
-        landslide_distance += landslide_speed
+        landslide_speed = min(water_level - critical_water_level, max_speed) + 1
+        landslide_distance += landslide_speed - 1
         land_to_water = (critical_water_level + 60) - landslide_distance - water_level
         message += f"\nСкорость оползня = {landslide_speed}, пройденное расстояние = {landslide_distance}\n" \
                    f"Расстояние до воды = {land_to_water}"
